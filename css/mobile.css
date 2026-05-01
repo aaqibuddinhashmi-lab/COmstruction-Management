@@ -106,6 +106,11 @@
 }
 
 @media (max-width: 760px) {
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
     body {
         background:
             linear-gradient(180deg, #08090b 0%, #060708 54%, #050607 100%),
@@ -348,13 +353,62 @@
         flex-direction: column;
     }
 
+    /* ═══ MOBILE LOGIN SCREEN ═══ */
+    .login-screen {
+        align-items: flex-start;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .login-container {
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+        min-height: 100vh !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+    }
+
     .login-visual {
-        min-height: 370px;
-        padding: 22px;
+        min-height: 200px;
+        padding: 24px 20px;
+        align-items: flex-end;
     }
 
     .login-visual h2 {
-        font-size: 34px;
+        font-size: 22px;
+        line-height: 1.2;
+    }
+
+    .login-visual p {
+        font-size: 13px;
+        margin-top: 6px;
+    }
+
+    .login-form {
+        padding: 28px 20px 40px !important;
+        gap: 16px !important;
+    }
+
+    .login-form .login-logo span {
+        font-size: 22px;
+    }
+
+    .login-form h3 {
+        font-size: 20px;
+    }
+
+    .role-selector {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 10px !important;
+    }
+
+    .role-option {
+        padding: 16px 10px !important;
+    }
+
+    .role-option .role-name {
+        font-size: 13px !important;
     }
 
     .login-card {

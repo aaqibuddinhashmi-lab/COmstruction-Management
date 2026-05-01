@@ -1134,24 +1134,26 @@ class BuildIQ {
                         <span>Vendor Payments</span>
                         <div class="badge warning">${b.vendors.length} tracked</div>
                     </div>
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>Vendor</th><th>Service/Material</th><th>Status</th><th>Amount Due</th><th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            ${b.vendors.map(v => `
+                    <div style="overflow-x:auto;">
+                        <table class="data-table" style="min-width:600px;">
+                            <thead>
                                 <tr>
-                                    <td><strong>${v.name}</strong></td>
-                                    <td>${['Cement Supply', 'Steel Rebar', 'Heavy Equipment'][Math.floor(Math.random()*3)]}</td>
-                                    <td><div class="badge ${v.status === 'Overdue' ? 'danger' : 'warning'}">${v.status}</div></td>
-                                    <td><strong>${v.due}</strong></td>
-                                    <td><button class="btn ghost" style="height:28px; font-size:12px;">Review</button></td>
+                                    <th>Vendor</th><th>Service/Material</th><th>Status</th><th>Amount Due</th><th>Action</th>
                                 </tr>
-                            `).join("")}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                ${b.vendors.map(v => `
+                                    <tr>
+                                        <td><strong>${v.name}</strong></td>
+                                        <td>${['Cement Supply', 'Steel Rebar', 'Heavy Equipment'][Math.floor(Math.random()*3)]}</td>
+                                        <td><div class="badge ${v.status === 'Overdue' ? 'danger' : 'warning'}">${v.status}</div></td>
+                                        <td><strong>${v.due}</strong></td>
+                                        <td><button class="btn ghost" style="height:28px; font-size:12px;">Review</button></td>
+                                    </tr>
+                                `).join("")}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         `;
@@ -1670,12 +1672,13 @@ class BuildIQ {
 
             <div class="dashboard-grid">
                 <div class="card span-12">
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>Document Name</th><th>Category</th><th>Upload Date</th><th>Status</th><th>Action</th>
-                            </tr>
-                        </thead>
+                    <div style="overflow-x:auto;">
+                        <table class="data-table" style="min-width:600px;">
+                            <thead>
+                                <tr>
+                                    <th>Document Name</th><th>Category</th><th>Upload Date</th><th>Status</th><th>Action</th>
+                                </tr>
+                            </thead>
                         <tbody>
                             ${d.map(doc => `
                                 <tr>
@@ -1697,7 +1700,8 @@ class BuildIQ {
                                 </tr>
                             `).join("")}
                         </tbody>
-                    </table>
+                        </table>
+                    </div>
                 </div>
             </div>
         `;
@@ -1740,30 +1744,32 @@ class BuildIQ {
                         <span>Invoice History</span>
                         <button class="btn ghost" style="height:32px; font-size:12px;"><i data-lucide="filter"></i> Filter</button>
                     </div>
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>Invoice ID</th><th>Amount</th><th>Milestone / Description</th><th>Due Date</th><th>Status</th><th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            ${p.map(inv => `
+                    <div style="overflow-x:auto;">
+                        <table class="data-table" style="min-width:600px;">
+                            <thead>
                                 <tr>
-                                    <td><strong>${inv.id}</strong></td>
-                                    <td><strong>${inv.amount}</strong></td>
-                                    <td>${inv.id === 'INV-004' ? 'Foundation completion milestone' : 'Monthly retainer & material cost'}</td>
-                                    <td>${inv.date}</td>
-                                    <td><div class="badge ${inv.status === 'Paid' ? 'success' : 'warning'}">${inv.status}</div></td>
-                                    <td>
-                                        ${inv.status === 'Paid' 
-                                            ? `<button class="btn ghost" style="height:28px; font-size:12px;"><i data-lucide="download"></i> Receipt</button>` 
-                                            : `<button class="btn primary" style="height:28px; font-size:12px;">Pay Now</button>`
-                                        }
-                                    </td>
+                                    <th>Invoice ID</th><th>Amount</th><th>Milestone / Description</th><th>Due Date</th><th>Status</th><th>Action</th>
                                 </tr>
-                            `).join("")}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                ${p.map(inv => `
+                                    <tr>
+                                        <td><strong>${inv.id}</strong></td>
+                                        <td><strong>${inv.amount}</strong></td>
+                                        <td>${inv.id === 'INV-004' ? 'Foundation completion milestone' : 'Monthly retainer & material cost'}</td>
+                                        <td>${inv.date}</td>
+                                        <td><div class="badge ${inv.status === 'Paid' ? 'success' : 'warning'}">${inv.status}</div></td>
+                                        <td>
+                                            ${inv.status === 'Paid' 
+                                                ? `<button class="btn ghost" style="height:28px; font-size:12px;"><i data-lucide="download"></i> Receipt</button>` 
+                                                : `<button class="btn primary" style="height:28px; font-size:12px;">Pay Now</button>`
+                                            }
+                                        </td>
+                                    </tr>
+                                `).join("")}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         `;
