@@ -219,7 +219,9 @@
 
     .drone-hero,
     .drone-hero.tall {
-        min-height: 285px;
+        min-height: 480px;
+        margin: 0 -14px;
+        border-radius: 0;
     }
 
     .video-hud {
@@ -253,6 +255,26 @@
         grid-template-columns: 1fr;
     }
 
+    .swipe-container {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 16px;
+        padding-bottom: 16px;
+        margin: 0 -14px;
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .swipe-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .swipe-card {
+        flex: 0 0 85%;
+        scroll-snap-align: center;
+    }
+
     .phone-strip {
         grid-auto-columns: 74%;
         scroll-snap-type: x mandatory;
@@ -280,6 +302,22 @@
     .ai-command {
         min-height: 440px;
         text-align: left;
+    }
+
+    .task-board > div {
+        background: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        gap: 8px !important;
+    }
+
+    .task-board > div > h4 {
+        margin-top: 10px;
+    }
+
+    .task-board > div > .card {
+        border-top-width: 1px !important;
+        border-left: 4px solid var(--accent) !important;
     }
 
     .ai-command h2 {

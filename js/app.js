@@ -227,37 +227,39 @@ class BuildIQ {
             </div>
 
             <div class="dashboard-grid">
-                <div class="card span-3">
-                    <div class="card-top"><span>Project Progress</span><i data-lucide="activity"></i></div>
-                    <div class="chart-shell">
-                        <canvas id="progressChart"></canvas>
-                        <div class="chart-center"><strong>${data.completion}%</strong><span>Finished</span></div>
+                <div class="span-12 kpi-wrapper swipe-container">
+                    <div class="card span-3 swipe-card">
+                        <div class="card-top"><span>Project Progress</span><i data-lucide="activity"></i></div>
+                        <div class="chart-shell">
+                            <canvas id="progressChart"></canvas>
+                            <div class="chart-center"><strong>${data.completion}%</strong><span>Finished</span></div>
+                        </div>
+                        <div class="progress-bar"><div class="progress-fill" style="width:${data.completion}%"></div></div>
                     </div>
-                    <div class="progress-bar"><div class="progress-fill" style="width:${data.completion}%"></div></div>
-                </div>
-                <div class="card span-3">
-                    <div class="card-top"><span>Delay Risk</span><i data-lucide="triangle-alert"></i></div>
-                    <div class="chart-shell">
-                        <canvas id="riskChart"></canvas>
-                        <div class="chart-center"><strong>${data.delayRisk}%</strong><span>Elevated</span></div>
+                    <div class="card span-3 swipe-card">
+                        <div class="card-top"><span>Delay Risk</span><i data-lucide="triangle-alert"></i></div>
+                        <div class="chart-shell">
+                            <canvas id="riskChart"></canvas>
+                            <div class="chart-center"><strong>${data.delayRisk}%</strong><span>Elevated</span></div>
+                        </div>
+                        <p class="metric-row"><span>Status</span><strong class="warning-text">Medium Risk</strong></p>
                     </div>
-                    <p class="metric-row"><span>Status</span><strong class="warning-text">Medium Risk</strong></p>
-                </div>
-                <div class="card span-3">
-                    <div class="card-top"><span>Budget Utilized</span><i data-lucide="wallet"></i></div>
-                    <div class="chart-shell">
-                        <canvas id="budgetChart"></canvas>
-                        <div class="chart-center"><strong>${data.budgetUsed}%</strong><span>Spent</span></div>
+                    <div class="card span-3 swipe-card">
+                        <div class="card-top"><span>Budget Utilized</span><i data-lucide="wallet"></i></div>
+                        <div class="chart-shell">
+                            <canvas id="budgetChart"></canvas>
+                            <div class="chart-center"><strong>${data.budgetUsed}%</strong><span>Spent</span></div>
+                        </div>
+                        <p class="metric-row"><span>Total</span><strong>₹200.0 Cr</strong></p>
                     </div>
-                    <p class="metric-row"><span>Total</span><strong>₹200.0 Cr</strong></p>
-                </div>
-                <div class="card span-3">
-                    <div class="card-top"><span>Waste Score</span><i data-lucide="recycle"></i></div>
-                    <div class="chart-shell">
-                        <canvas id="wasteChart"></canvas>
-                        <div class="chart-center"><strong>72</strong><span>Good</span></div>
+                    <div class="card span-3 swipe-card">
+                        <div class="card-top"><span>Waste Score</span><i data-lucide="recycle"></i></div>
+                        <div class="chart-shell">
+                            <canvas id="wasteChart"></canvas>
+                            <div class="chart-center"><strong>72</strong><span>Good</span></div>
+                        </div>
+                        <p class="metric-row"><span>Impact</span><strong class="danger-text">+2.1% spike</strong></p>
                     </div>
-                    <p class="metric-row"><span>Impact</span><strong class="danger-text">+2.1% spike</strong></p>
                 </div>
 
                 <div class="card span-8">
@@ -307,26 +309,28 @@ class BuildIQ {
 
             <div class="dashboard-grid">
                 <!-- Top KPI Cards -->
-                <div class="card span-3">
-                    <div class="card-top"><span>Active Projects</span><i data-lucide="briefcase"></i></div>
-                    <strong style="font-size:36px;">${stats.totalProjects}</strong>
-                    <p style="color:var(--text-muted); font-size:12px; margin-top:8px;">Across 3 cities</p>
-                </div>
-                <div class="card span-3">
-                    <div class="card-top"><span>Revenue Snapshot</span><i data-lucide="indian-rupee"></i></div>
-                    <strong style="font-size:36px; color:var(--success);">${stats.revenue}</strong>
-                    <p style="color:var(--success); font-size:12px; margin-top:8px;">+14% this quarter</p>
-                </div>
-                <div class="card span-3">
-                    <div class="card-top"><span>Active Workers</span><i data-lucide="users"></i></div>
-                    <strong style="font-size:36px;">${stats.activeWorkers}</strong>
-                    <div class="progress-bar"><div class="progress-fill" style="width:85%"></div></div>
-                    <p style="color:var(--text-muted); font-size:12px; margin-top:8px;">85% capacity utilized</p>
-                </div>
-                <div class="card span-3">
-                    <div class="card-top"><span>Compliance Alerts</span><i data-lucide="shield-alert"></i></div>
-                    <strong style="font-size:36px; color:var(--danger);">${stats.complianceAlerts}</strong>
-                    <p style="color:var(--danger); font-size:12px; margin-top:8px;">Action required on 2 sites</p>
+                <div class="span-12 kpi-wrapper swipe-container">
+                    <div class="card span-3 swipe-card">
+                        <div class="card-top"><span>Active Projects</span><i data-lucide="briefcase"></i></div>
+                        <strong style="font-size:36px;">${stats.totalProjects}</strong>
+                        <p style="color:var(--text-muted); font-size:12px; margin-top:8px;">Across 3 cities</p>
+                    </div>
+                    <div class="card span-3 swipe-card">
+                        <div class="card-top"><span>Revenue Snapshot</span><i data-lucide="indian-rupee"></i></div>
+                        <strong style="font-size:36px; color:var(--success);">${stats.revenue}</strong>
+                        <p style="color:var(--success); font-size:12px; margin-top:8px;">+14% this quarter</p>
+                    </div>
+                    <div class="card span-3 swipe-card">
+                        <div class="card-top"><span>Active Workers</span><i data-lucide="users"></i></div>
+                        <strong style="font-size:36px;">${stats.activeWorkers}</strong>
+                        <div class="progress-bar"><div class="progress-fill" style="width:85%"></div></div>
+                        <p style="color:var(--text-muted); font-size:12px; margin-top:8px;">85% capacity utilized</p>
+                    </div>
+                    <div class="card span-3 swipe-card">
+                        <div class="card-top"><span>Compliance Alerts</span><i data-lucide="shield-alert"></i></div>
+                        <strong style="font-size:36px; color:var(--danger);">${stats.complianceAlerts}</strong>
+                        <p style="color:var(--danger); font-size:12px; margin-top:8px;">Action required on 2 sites</p>
+                    </div>
                 </div>
 
                 <!-- Main Charts Area -->
@@ -409,11 +413,11 @@ class BuildIQ {
                 </div>
                 <div class="card span-12">
                     <div class="card-top"><span>Quick Actions</span></div>
-                    <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:10px;">
-                        <button class="btn ghost" style="flex-direction:column; height:80px;"><i data-lucide="camera"></i>Upload Work</button>
-                        <button class="btn ghost" style="flex-direction:column; height:80px;"><i data-lucide="package"></i>Request Material</button>
-                        <button class="btn ghost" style="flex-direction:column; height:80px;"><i data-lucide="alert-triangle"></i>Report Hazard</button>
-                        <button class="btn ghost" style="flex-direction:column; height:80px;"><i data-lucide="message-square"></i>Msg Engineer</button>
+                    <div class="kpi-wrapper swipe-container" style="display: flex; gap: 10px;">
+                        <button class="btn ghost swipe-card" style="flex-direction:column; height:80px; flex: 1; min-width: 100px;"><i data-lucide="camera"></i>Upload Work</button>
+                        <button class="btn ghost swipe-card" style="flex-direction:column; height:80px; flex: 1; min-width: 100px;"><i data-lucide="package"></i>Request Material</button>
+                        <button class="btn ghost swipe-card" style="flex-direction:column; height:80px; flex: 1; min-width: 100px;"><i data-lucide="alert-triangle"></i>Report Hazard</button>
+                        <button class="btn ghost swipe-card" style="flex-direction:column; height:80px; flex: 1; min-width: 100px;"><i data-lucide="message-square"></i>Msg Engineer</button>
                     </div>
                 </div>
             </div>
@@ -427,37 +431,41 @@ class BuildIQ {
                 <div><span class="eyebrow">Client Portal</span><h2>${d.project}</h2></div>
             </div>
             <div class="dashboard-grid">
-                <div class="card span-4">
-                    <div class="card-top"><span>Completion</span><i data-lucide="trending-up"></i></div>
-                    <strong style="font-size:36px;">${d.completion}%</strong>
-                    <div class="progress-bar"><div class="progress-fill" style="width:${d.completion}%"></div></div>
-                    <p style="margin-top:10px; font-size:12px; color:var(--text-muted);">Estimated Completion: <strong>${d.eta}</strong></p>
-                </div>
-                <div class="card span-8">
-                    <div class="card-top"><span>Milestone Timeline</span><i data-lucide="calendar"></i></div>
-                    <div style="display:flex; justify-content:space-between; position:relative; padding-top:20px;">
-                        ${d.milestones.map(m => `
-                            <div style="text-align:center; flex:1; position:relative; z-index:1;">
-                                <div style="width:12px; height:12px; border-radius:50%; background:${m.status === 'done' ? 'var(--success)' : m.status === 'active' ? 'var(--accent)' : 'var(--border)'}; margin:0 auto 10px;"></div>
-                                <strong style="font-size:12px; display:block;">${m.name}</strong>
-                                <span style="font-size:11px; color:var(--text-muted);">${m.date}</span>
-                            </div>
-                        `).join("")}
-                        <div style="position:absolute; top:25px; left:12%; right:12%; height:2px; background:var(--border); z-index:0;"></div>
+                <div class="span-12 kpi-wrapper swipe-container">
+                    <div class="card span-4 swipe-card">
+                        <div class="card-top"><span>Completion</span><i data-lucide="trending-up"></i></div>
+                        <strong style="font-size:36px;">${d.completion}%</strong>
+                        <div class="progress-bar"><div class="progress-fill" style="width:${d.completion}%"></div></div>
+                        <p style="margin-top:10px; font-size:12px; color:var(--text-muted);">Estimated Completion: <strong>${d.eta}</strong></p>
+                    </div>
+                    <div class="card span-8 swipe-card">
+                        <div class="card-top"><span>Milestone Timeline</span><i data-lucide="calendar"></i></div>
+                        <div style="display:flex; justify-content:space-between; position:relative; padding-top:20px;">
+                            ${d.milestones.map(m => `
+                                <div style="text-align:center; flex:1; position:relative; z-index:1;">
+                                    <div style="width:12px; height:12px; border-radius:50%; background:${m.status === 'done' ? 'var(--success)' : m.status === 'active' ? 'var(--accent)' : 'var(--border)'}; margin:0 auto 10px;"></div>
+                                    <strong style="font-size:12px; display:block;">${m.name}</strong>
+                                    <span style="font-size:11px; color:var(--text-muted);">${m.date}</span>
+                                </div>
+                            `).join("")}
+                            <div style="position:absolute; top:25px; left:12%; right:12%; height:2px; background:var(--border); z-index:0;"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="card span-6">
-                    <div class="card-top"><span>Payment Summary</span><i data-lucide="credit-card"></i></div>
-                    <div class="metric-row"><span>Total Budget</span><strong>${d.budgetSummary.total}</strong></div>
-                    <div class="metric-row"><span>Amount Paid</span><strong>${d.budgetSummary.spent}</strong></div>
-                    <div class="metric-row"><span>Outstanding</span><strong class="warning-text">${d.budgetSummary.remaining}</strong></div>
-                </div>
-                <div class="card span-6">
-                    <div class="card-top"><span>Latest Site Photos</span><i data-lucide="camera"></i></div>
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
-                        ${['skyline', 'droneSouth'].map((k) => `
-                            <img src="${BuildIQData.images[k]}" style="width:100%; height:90px; object-fit:cover; border-radius:var(--radius-sm);" alt="Site Snapshot">
-                        `).join("")}
+                <div class="span-12 kpi-wrapper swipe-container">
+                    <div class="card span-6 swipe-card">
+                        <div class="card-top"><span>Payment Summary</span><i data-lucide="credit-card"></i></div>
+                        <div class="metric-row"><span>Total Budget</span><strong>${d.budgetSummary.total}</strong></div>
+                        <div class="metric-row"><span>Amount Paid</span><strong>${d.budgetSummary.spent}</strong></div>
+                        <div class="metric-row"><span>Outstanding</span><strong class="warning-text">${d.budgetSummary.remaining}</strong></div>
+                    </div>
+                    <div class="card span-6 swipe-card">
+                        <div class="card-top"><span>Latest Site Photos</span><i data-lucide="camera"></i></div>
+                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+                            ${['skyline', 'droneSouth'].map((k) => `
+                                <img src="${BuildIQData.images[k]}" style="width:100%; height:90px; object-fit:cover; border-radius:var(--radius-sm);" alt="Site Snapshot">
+                            `).join("")}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -481,17 +489,17 @@ class BuildIQ {
                 </div>
             </div>
 
-            <div class="dashboard-grid">
+            <div class="dashboard-grid drone-layout">
                 <!-- MAIN LIVE FEED -->
-                <div class="card span-9">
-                    <div class="card-top">
+                <div class="card span-9" style="padding: 0; border: none; background: transparent;">
+                    <div class="card-top" style="padding: 16px;">
                         <span id="drone-feed-title">Live Feed — ${defaultFeed.name}</span>
                         <div style="display:flex; gap:8px; align-items:center;">
                             <div class="badge danger" id="drone-rec-badge" style="animation:pulse 1.5s infinite;">● REC</div>
                             <button class="btn ghost" style="height:28px; padding:0 8px;" id="drone-fullscreen-btn"><i data-lucide="maximize-2"></i></button>
                         </div>
                     </div>
-                    <div class="drone-hero" id="drone-main-feed" style="height:480px; border-radius:var(--radius-md); overflow:hidden; position:relative; cursor:crosshair;">
+                    <div class="drone-hero" id="drone-main-feed" style="height:480px; border-radius:var(--radius-lg); overflow:hidden; position:relative; cursor:crosshair;">
                         <img id="drone-main-img" src="${BuildIQData.images[defaultFeed.imageKey]}" style="width:100%; height:100%; object-fit:cover; transition:opacity 0.4s ease;" alt="Drone Live Feed">
                         <div class="scanline"></div>
 
@@ -550,10 +558,10 @@ class BuildIQ {
 
                 <!-- FLEET STATUS SIDEBAR -->
                 <div class="card span-3">
-                    <div class="card-top"><span>Fleet Status</span><span style="font-size:11px; color:var(--text-muted); text-transform:none; font-weight:600;">${feeds.length} drones</span></div>
-                    <div id="drone-feed-list" style="display:grid; gap:12px; margin-bottom:16px;">
+                    <div class="card-top"><span>Fleet Status (Swipe)</span><span style="font-size:11px; color:var(--text-muted); text-transform:none; font-weight:600;">${feeds.length} drones</span></div>
+                    <div id="drone-feed-list" class="swipe-container" style="display:flex; gap:12px; margin-bottom:16px;">
                         ${feeds.map((f, i) => `
-                            <div class="drone-feed-thumb ${i === 0 ? 'active-feed' : ''}" data-feed-index="${i}" style="cursor:pointer; border-radius:var(--radius-md); overflow:hidden; border:2px solid ${i === 0 ? 'var(--accent)' : 'var(--border)'}; transition:all 0.25s;">
+                            <div class="drone-feed-thumb swipe-card ${i === 0 ? 'active-feed' : ''}" data-feed-index="${i}" style="cursor:pointer; border-radius:var(--radius-md); overflow:hidden; border:2px solid ${i === 0 ? 'var(--accent)' : 'var(--border)'}; transition:all 0.25s; min-width: 140px;">
                                 <div style="position:relative; height:90px; overflow:hidden;">
                                     <img src="${BuildIQData.images[f.imageKey] || BuildIQData.images.skyline}" style="width:100%; height:100%; object-fit:cover; opacity:0.75; transition:opacity 0.3s;" alt="${f.name}">
                                     <div style="position:absolute; top:6px; right:6px; display:flex; align-items:center; gap:4px; background:rgba(0,0,0,0.7); padding:2px 6px; border-radius:4px;">
@@ -834,24 +842,26 @@ class BuildIQ {
                     </div>
                 </div>
 
-                ${BuildIQData.waste.dailyReport.map(w => `
-                    <div class="card span-4">
-                        <div class="card-top">
-                            <span>${w.material} Loss</span>
-                            <i data-lucide="${w.icon}"></i>
+                <div class="span-12 kpi-wrapper swipe-container">
+                    ${BuildIQData.waste.dailyReport.map(w => `
+                        <div class="card span-4 swipe-card">
+                            <div class="card-top">
+                                <span>${w.material} Loss</span>
+                                <i data-lucide="${w.icon}"></i>
+                            </div>
+                            <div style="display:flex; align-items:baseline; gap:12px;">
+                                <strong style="font-size:36px;">${w.value}</strong>
+                            </div>
+                            <div class="progress-bar" style="margin:12px 0;">
+                                <div class="progress-fill" style="width:${w.trend.startsWith('+') ? '80%' : '30%'}; background:${w.trend.startsWith('+') ? 'var(--danger)' : 'var(--success)'};"></div>
+                            </div>
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <p style="color:var(--text-muted); font-size:12px;">Daily Limit vs Actual</p>
+                                <div class="badge ${w.trend.startsWith('+') ? 'danger' : 'success'}">${w.trend} vs baseline</div>
+                            </div>
                         </div>
-                        <div style="display:flex; align-items:baseline; gap:12px;">
-                            <strong style="font-size:36px;">${w.value}</strong>
-                        </div>
-                        <div class="progress-bar" style="margin:12px 0;">
-                            <div class="progress-fill" style="width:${w.trend.startsWith('+') ? '80%' : '30%'}; background:${w.trend.startsWith('+') ? 'var(--danger)' : 'var(--success)'};"></div>
-                        </div>
-                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <p style="color:var(--text-muted); font-size:12px;">Daily Limit vs Actual</p>
-                            <div class="badge ${w.trend.startsWith('+') ? 'danger' : 'success'}">${w.trend} vs baseline</div>
-                        </div>
-                    </div>
-                `).join("")}
+                    `).join("")}
+                </div>
             </div>
         `;
     }
@@ -931,7 +941,7 @@ class BuildIQ {
             </div>
             
             <!-- Kanban Board -->
-            <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:20px; overflow-x:auto; padding-bottom:20px; min-height:600px;">
+            <div class="task-board" style="display:grid; grid-template-columns:repeat(4, 1fr); gap:20px; overflow-x:auto; padding-bottom:20px; min-height:600px;">
                 ${['pending', 'inProgress', 'review', 'completed'].map(col => `
                     <div style="display:flex; flex-direction:column; gap:12px; background:rgba(255,255,255,0.02); padding:16px; border-radius:var(--radius-lg); border:1px solid var(--border);">
                         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
